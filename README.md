@@ -17,8 +17,23 @@ allprojects {
 ```
 ### 2. dependencies
 In the `build.gradle` of the module.
+
 ```gradle
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android{
+//others 
+dataBinding {
+    enabled = true
+}
+kapt {
+    generateStubs = true
+}
+}
 dependencies {
+//others
     implementation 'com.github.nb312:NBKotlinUI:0.0.3'
 }
 ```
