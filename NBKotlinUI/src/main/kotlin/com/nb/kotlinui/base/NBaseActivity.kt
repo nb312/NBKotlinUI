@@ -7,8 +7,8 @@ import android.support.v7.app.AppCompatActivity
 import android.util.AttributeSet
 import android.view.View
 import android.widget.TextView
-import com.nb.kotlinui.base.inter.IHttpFunction
-import com.nb.kotlinui.base.inter.IUiFunction
+import com.nb.kotlinui.inter.IHttpFunction
+import com.nb.kotlinui.inter.IUiFunction
 import com.zhy.autolayout.AutoFrameLayout
 import com.zhy.autolayout.AutoLinearLayout
 import com.zhy.autolayout.AutoRelativeLayout

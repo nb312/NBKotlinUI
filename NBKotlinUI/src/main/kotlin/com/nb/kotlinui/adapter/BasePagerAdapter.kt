@@ -5,9 +5,8 @@ import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
 import android.support.v4.view.ViewPager
-import com.nb.extension.id2Color
 import com.nb.kotlinui.R
-import com.nb.kotlinui.base.NBaseFragment
+import com.nb.kotlinui.extension.id2Color
 import com.zhy.autolayout.utils.AutoUtils
 import net.lucode.hackware.magicindicator.MagicIndicator
 import net.lucode.hackware.magicindicator.ViewPagerHelper

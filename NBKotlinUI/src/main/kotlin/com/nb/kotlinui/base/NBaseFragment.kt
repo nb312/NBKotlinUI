@@ -1,17 +1,14 @@
 package com.nb.kotlinui.base
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.nb.kotlinui.base.inter.IHttpFunction
-import com.nb.kotlinui.base.inter.IUiFunction
+import com.nb.kotlinui.inter.IHttpFunction
+import com.nb.kotlinui.inter.IUiFunction
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
-import java.io.Serializable
 
 
 /**
