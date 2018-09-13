@@ -1,4 +1,5 @@
 # NBKotlinUI
+[![ui][uisvg]][ui]  
 The UI util for kotlin in android .
 # How to use this lib. 
 ### 1. Add an URL of the repository 
@@ -27,3 +28,7 @@ If you want to use the code of this library, you must initialize the param in th
       KotlinUi.context = this
 ```
 if you follow these steps above,then you can use the library as well.
+
+
+[uisvg]:https://img.shields.io/badge/NBKotlinUI-v0.0.3-green.svg
+[ui]: https://github.com/Blankj/AndroidUtilCode
