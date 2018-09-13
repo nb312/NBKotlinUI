@@ -23,9 +23,6 @@ import java.io.Serializable
  * Email: niebin312@gmail.com
  */
 open class NBaseActivity : AppCompatActivity() {
-    companion object {
-        const val KEY_DATA_INTENT = "key_data_intent"
-    }
 
     private var disposables = CompositeDisposable()
 

@@ -1,4 +1,4 @@
-package com.icoinbay.app.extension
+package com.nb.kotlinui.extension
 
 import android.graphics.Bitmap
 import android.graphics.drawable.BitmapDrawable

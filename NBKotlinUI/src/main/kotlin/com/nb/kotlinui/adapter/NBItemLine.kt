@@ -8,8 +8,6 @@ import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.View
 
-import com.zhy.autolayout.utils.AutoUtils
-
 class NBItemLine : RecyclerView.ItemDecoration() {
 
     var divider: Drawable? = null
@@ -101,9 +99,9 @@ class NBItemLine : RecyclerView.ItemDecoration() {
 
     override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
         when (orientation) {
-            DIVIDER_VERTICAL -> outRect.set(0, 0, 0, (verticalSize * AutoUtils.getPercentHeight1px()).toInt())
-            DIVIDER_HORIZONTAL -> outRect.set(0, 0, (horizontalSize * AutoUtils.getPercentWidth1px()).toInt(), 0)
-            DIVIDER_BOTH -> outRect.set(0, 0, (horizontalSize * AutoUtils.getPercentWidth1px()).toInt(), (verticalSize * AutoUtils.getPercentWidth1px()).toInt())
+            DIVIDER_VERTICAL -> outRect.set(0, 0, 0, verticalSize)
+            DIVIDER_HORIZONTAL -> outRect.set(0, 0, horizontalSize, 0)
+            DIVIDER_BOTH -> outRect.set(0, 0, horizontalSize, verticalSize)
             else -> {
             }
         }
@@ -111,8 +109,8 @@ class NBItemLine : RecyclerView.ItemDecoration() {
 
     companion object {
 
-        val DIVIDER_VERTICAL = 0
-        val DIVIDER_HORIZONTAL = 1
-        val DIVIDER_BOTH = 2
+        const val DIVIDER_VERTICAL = 0
+        const val DIVIDER_HORIZONTAL = 1
+        const val DIVIDER_BOTH = 2
     }
 }

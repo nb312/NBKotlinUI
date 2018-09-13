@@ -17,6 +17,7 @@ abstract class NBaseAdapter<DataItem : NBaseDataItemInter, DataBindView : ViewDa
     private var mDataList: MutableList<DataItem> = mutableListOf()
     /**this must be init by user, if you do not init it.*/
     abstract var layoutId: Int
+    var hasClick = true
     var clickListener: (item: DataItem) -> Unit = {}
 
     init {
@@ -36,12 +37,14 @@ abstract class NBaseAdapter<DataItem : NBaseDataItemInter, DataBindView : ViewDa
     override fun getItemCount(): Int = mDataList?.size
     override fun onBindViewHolder(vHolder: NBaseVHolder<DataBindView>, pos: Int) {
         var item = getPosItem(pos)
-        vHolder.mBindView.root.setOnClickListener {
-            if (item != null) {
+        if (item != null && hasClick) {
+            vHolder.mBindView.root.setOnClickListener {
                 clickListener(item)
             }
         }
-        vHolder.mBindView.onBindView(item)
+        if (item != null) {
+            vHolder.mBindView.onBindView(item)
+        }
     }
 
     private fun getPosItem(pos: Int): DataItem? {
@@ -53,24 +56,25 @@ abstract class NBaseAdapter<DataItem : NBaseDataItemInter, DataBindView : ViewDa
         }
     }
 
+    abstract fun DataBindView.onBindView(dataItem: DataItem)
+
     /**append the data to its trail.*/
-    fun appendData(list: MutableList<DataItem>) {
+    fun changeAppendPart(list: MutableList<DataItem>) {
+        if (list.size == 0) return
+        var pos = mDataList.size
         mDataList.addAll(list)
-        notifyDataSetChanged()
+        notifyItemRangeChanged(pos, list.size + pos - 1)
     }
 
     /** clear the data then add all to it.*/
-    open fun addAllData(list: MutableList<DataItem>?) {
+    open fun changeAll(list: MutableList<DataItem>?) {
         mDataList.clear()
         mDataList.addAll(list ?: mutableListOf())
         notifyDataSetChanged()
-
     }
 
-    abstract fun DataBindView.onBindView(dataItem: DataItem?)
 }
 
 class NBaseVHolder<DataBindView : ViewDataBinding>(var mBindView: DataBindView) : RecyclerView.ViewHolder(mBindView.root)
-
 
 interface NBaseDataItemInter : Serializable
