@@ -1,7 +1,7 @@
 # NBKotlinUI
 [![ui][uisvg]][ui]  
-The UI util for kotlin in android .
-# How to use this lib. 
+This util is for kotlin in android .
+# Start. 
 ### 1. Add an URL of the repository 
 In the build.gradle of the project root.Add this:
 ```gradle
