@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="back_gray">#44000000</color>
+
+    <color name="nb_white">#FFFFFF</color>
+    <color name="nb_line">#EEEEEE</color>
+    <color name="nb_dialog_button">#7B8D9E</color>
+
+    <color name="nb_blue">#0069E5</color>
+    <color name="nb_green">#64B025</color>
+    <color name="nb_pink">#E01270</color>
+    <color name="nb_sub_light">#F2F7FD</color>
+
+    <color name="nb_text_black">#2C3747</color>
+    <color name="nb_text_blue_light">#7B8D9E</color>
+    <color name="nb_text_blue_light2">#C0C9D2</color>
+    <color name="nb_text_gray">#848891</color>
+    <color name="nb_text_red">#D90E0D</color>
+
+    <color name="nb_background">#F9F9F9</color>
+
+</resources>

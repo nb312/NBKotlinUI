@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/lay_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/back_gray"
+        android:gravity="center"
+        android:paddingLeft="120px"
+        android:paddingRight="120px">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_round_rectangle"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/lay_title"
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <View
+                    android:id="@+id/v_title_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/nb_line" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/v_title_line"
+                    android:gravity="center"
+                    android:text="Title"
+                    android:textColor="@color/nb_text_black"
+                    android:textSize="@dimen/nb_text_title" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/lay_middle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:minHeight="170px"></FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/lay_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="86px"
+                android:background="@android:color/white"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:background="@color/nb_line"></View>
+
+                <TextView
+                    android:id="@+id/tv_center_single"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Sure"
+                    android:textColor="@color/nb_text_blue_light"
+                    android:textSize="@dimen/nb_text_title"
+                    android:visibility="gone"></TextView>
+
+                <RelativeLayout
+                    android:id="@+id/lay_double"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/v_center"
+                        android:layout_width="2px"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:background="@color/nb_line" />
+
+                    <TextView
+                        android:id="@+id/tv_left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toLeftOf="@id/v_center"
+                        android:gravity="center"
+                        android:text="Cancel"
+                        android:textSize="@dimen/nb_text_title" />
+
+                    <TextView
+                        android:id="@+id/tv_right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@id/v_center"
+                        android:gravity="center"
+                        android:text="Sure"
+                        android:textSize="@dimen/nb_text_title" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</layout>

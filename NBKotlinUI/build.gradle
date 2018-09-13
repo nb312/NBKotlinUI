@@ -1,0 +1,75 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    sourceSets {
+        main.java.srcDirs += "src/main/kotlin"
+        test.java.srcDirs += "src/test/kotlin"
+    }
+    kapt {
+        generateStubs = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {}
+
+    }
+    androidExtensions {
+        experimental = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    testImplementation 'junit:junit:4.12'
+    api 'com.android.support:support-v4:28.0.0-alpha3'
+    api 'com.android.support:recyclerview-v7:28.0.0-alpha3'
+
+    implementation 'com.android.support:multidex:1.0.3'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //kotlin
+    testImplementation "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
+
+    //side bar
+    api 'com.timehop.stickyheadersrecyclerview:library:0.4.3@aar'
+    api 'com.bigkoo:quicksidebar:1.0.3'
+
+    //图片选择框架https://github.com/crazycodeboy/TakePhoto
+    implementation 'com.jph.takephoto:takephoto_library:4.0.3'
+    implementation 'com.zhy:autolayout:1.4.5'
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+    implementation 'com.github.nb312:KotlinCommonUtil:0.0.4'
+
+}
