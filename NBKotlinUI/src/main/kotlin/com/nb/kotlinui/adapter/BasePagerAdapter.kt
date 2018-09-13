@@ -1,4 +1,4 @@
-package com.icoinbay.app.base
+package com.nb.kotlinui.base
 
 import android.content.Context
 import android.support.v4.app.Fragment

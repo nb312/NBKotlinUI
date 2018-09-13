@@ -1,4 +1,4 @@
-package com.nb.nbcomponentui;
+package com.nb.kotlinui;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

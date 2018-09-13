@@ -1,4 +1,4 @@
-package com.nb.nbcomponentui;
+package com.nb.kotlinui;
 
 import org.junit.Test;
 

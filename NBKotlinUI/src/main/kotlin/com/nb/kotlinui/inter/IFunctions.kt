@@ -1,4 +1,4 @@
-package com.nb.kotlinui.base.inter
+package com.nb.kotlinui.inter
 
 /**
  * Created by NieBin on 2018-08-06
