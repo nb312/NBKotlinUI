@@ -101,4 +101,4 @@ If you want to set a distance between two items,you can just use the `recyclervi
 
 
 [uisvg]:https://img.shields.io/badge/NBKotlinUI-v0.0.3-green.svg
-[ui]: https://github.com/Blankj/AndroidUtilCode
+[ui]:https://github.com/nb312/NBKotlinUI
