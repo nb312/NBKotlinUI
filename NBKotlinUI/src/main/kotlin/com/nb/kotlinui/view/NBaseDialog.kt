@@ -16,10 +16,11 @@ import com.nb.kotlinui.R
 
 abstract class NBaseDialog<DataBinding : ViewDataBinding>(context: Context) : Dialog(context, R.style.custom_dialog) {
     abstract var layoutId: Int
+    lateinit var mBinding: DataBinding
     var isEnableCancel = true
 
     private fun initView() {
-        var mBinding: DataBinding = DataBindingUtil.inflate(layoutInflater, layoutId, null, false)
+        mBinding = DataBindingUtil.inflate(layoutInflater, layoutId, null, false)
         var view = mBinding.root
         setContentView(view)
         val window = window
@@ -29,19 +30,15 @@ abstract class NBaseDialog<DataBinding : ViewDataBinding>(context: Context) : Di
         layoutParams.width = displayMetrics.widthPixels
         layoutParams.height = displayMetrics.heightPixels
         window.attributes = layoutParams
+    }
+
+    fun refreshView() {
         setCancelable(isEnableCancel)
         setCanceledOnTouchOutside(isEnableCancel)
         mBinding.initVew()
     }
 
     abstract fun DataBinding.initVew()
-
-    override fun show() {
-        if (!isShowing) {
-            initView()
-            super.show()
-        }
-    }
 
 }
 
