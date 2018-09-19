@@ -18,9 +18,6 @@ abstract class NBaseDialog<DataBinding : ViewDataBinding>(context: Context) : Di
     abstract var layoutId: Int
     lateinit var mBinding: DataBinding
     var isEnableCancel = true
-    init {
-        initView()
-    }
     private fun initView() {
         mBinding = DataBindingUtil.inflate(layoutInflater, layoutId, null, false)
         var view = mBinding.root
@@ -35,6 +32,7 @@ abstract class NBaseDialog<DataBinding : ViewDataBinding>(context: Context) : Di
     }
 
     fun refreshView() {
+        initView()
         setCancelable(isEnableCancel)
         setCanceledOnTouchOutside(isEnableCancel)
         mBinding.initVew()
